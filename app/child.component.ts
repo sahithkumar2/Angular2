@@ -4,47 +4,20 @@ import { Component } from '@angular/core';
 
   selector: 'child-component',
 
-  styles : [`
-
-.child {
-
-   background : #aaa;
-
-   padding: 10px;
-
-   overflow:auto;
-
-}
-
-.book{
-
-   background : #0a0;
-
-   padding:20px;
-
-   margin:10px;
-
-   width:300px;
-
-   float:left;
-
-}
-
-  `],
-
+  
   template: `
 
-<div class="child">
+        <div class="child">
 
-<h2>Books :</h2>
+            <h2>Books :</h2>
 
-<div class="book" *ngFor="let boook of books">
+            <div class="book" *ngFor="let boook of books">
 
-<h4> Title : {{boook.title}} </h4> <h4>Price: {{boook.price}}</h4>
+               <h4> Title : {{boook.title}} </h4> <h4>Price: {{boook.price}}</h4>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
   `
 
@@ -52,32 +25,32 @@ import { Component } from '@angular/core';
 
 export class ChildComponent {
 
-books = [
+  books = [
 
-  {
+    {
 
-title : 'Love Story',
+      title : 'Love Story',
 
-price : 'Rs. 1400'
+      price : 'Rs. 1400'
 
-  },
+    },
 
-  {
+    {
 
-title : 'Two States',
+  title : 'Two States',
 
-price : 'Rs. 1700'
+  price : 'Rs. 1700'
 
-  },
+    },
 
-  {
+    {
 
-title : 'Computer fundamentals',
+  title : 'Computer fundamentals',
 
-price : 'Rs. 1000'
+  price : 'Rs. 1000'
 
-  }
+    }
 
-]
+  ]
 
 }

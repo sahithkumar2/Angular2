@@ -9,13 +9,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
-        this.name = "Using Angular2";
+        this.name = "Using Angular2.0";
     }
     AppComponent = __decorate([
         core_1.Component({
             selector: 'sahith-app',
-            styles: ["\n\t\t            .parent {\n\t\t\t\t\t\tbackground: #c7c7c7;\n\t\t\t\t\t\tcolor: #000;\n\t\t\t\t\t\tpadding: 20px;\n\t\t\t\t\t\t}\n\t\t\t\t\th1 {\n\t\t\t\t\t\ttext-align: center;\n\t\t\t\t\t}\t  \n\t\t   "],
-            template: "\n\t\t   <div>\n\t\t   <h1> {{name}} </h1>\n\t\t <sahith-book></sahith-book>\n\t\t <pm-product></pm-product>\n\t\t   </div>",
+            template: "\n\t\t   <div>\n\t\t   <h1> {{name}} </h1>\n\t\t <sahith-book></sahith-book>\n\t\t <pm-product></pm-product>\n\t\n\t\t\n\t\t   </div>",
         })
     ], AppComponent);
     return AppComponent;

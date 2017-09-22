@@ -13,10 +13,17 @@ var BookComponent = /** @class */ (function () {
     BookComponent = __decorate([
         core_1.Component({
             selector: 'sahith-book',
-            template: "<h1>book component</h1>"
+            template: "<h1>Book Components</h1>"
         })
     ], BookComponent);
     return BookComponent;
 }());
 exports.BookComponent = BookComponent;
+// import {Component} from '@angular/core';
+// @Component ({
+//     selector : 'sahith-book',
+//     template : '<h1>Bag Components </h1>'
+// })
+// export class BagComponent{
+// } 
 //# sourceMappingURL=book.component.js.map
