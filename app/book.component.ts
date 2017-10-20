@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 
 @Component ({
     selector : 'sahith-book',
-    template : `<h1>Book Components</h1>`
+    template : `<h1></h1>`
 })
 
 export class BookComponent{

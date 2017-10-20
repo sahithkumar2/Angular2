@@ -1,26 +1,28 @@
-<div class='panel panel-primary'>
-    <div class='panel-heading'>
+<div class='container' style="color: red;">
+    <div class='container' >
         {{pageTitle}}
     </div>
     <div class='panel-body'>
       <div class='row'>
         <div class='col-md-2'>Filter by:</div>
+        <button class="btn btn-success" (click)="ListView()">List</button>
+        <button class="btn btn-success" (click)="GridView()">Grid</button>
         <div class='col-md-8'>
-          <input type='text' />
+          <input type='text'[(ngModel)]="listFilter"/>
         </div>
       </div>
       <div class='row'>
         <div class='col-md-6'>
-          <h3>Filtered by: </h3>
+          <h3>Filtered by:{{listFilter}} </h3>
         </div>
       </div>
-      <div class='table-responsive'>
-        <table class='table' *ngIf="products && products.length">
+      <div class='table-responsive' style="color: rgba(0, 0, 0, 0.64);" >
+        <table class='table table-condensed' *ngIf="products && products.length && grid">
           <thead>
             <tr>
               <th>
-                <button class='btn btn-primary'>
-                    Show Image
+                <button class='btn btn-primary' (click)="toggleImage()">
+                    {{showImage?"Hide Image":"Show Image"}}
                 </button>
               </th>
               <th>Product</th>
@@ -31,16 +33,24 @@
             </tr>
           </thead>
           <tbody>
-              <tr *ngFor="let product of products">
-                  <td><img [src]='product.imageUrl' [style.width.px]="imageWidth"></td>
-                  <td>{{product.productName}}</td>
-                  <td>{{product.productCode}}</td>
+              <tr *ngFor="let product of products |productFilter:listFilter">
+                  <td><img [src]='product.imageUrl' [style.width.px]="imageWidth" *ngIf="showImage"></td>
+                  <td><a [routerLink]="['/product',product.productId]">{{product.productName | uppercase}}</a></td>
+                  <td>{{product.productCode | lowercase }}</td>
                   <td>{{product.releaseDate}}</td>
-                  <td>{{product.price}}</td>
-                  <td>{{product.starRating}}</td>
+                  <td>{{product.price | currency:"INR":true}}</td>
+                  <td><sahith-star [rating]='product.starRating'></sahith-star></td>
 
               </tr>
           </tbody>
         </table>
+      </div>
+      <div *ngIf="list">
+          <ul class="list-group" *ngFor="let product of products |productFilter:listFilter">
+              <li class="list-group-item list-group-item-success"><a [routerLink]="['/product',product.productId]">{{product.productName | uppercase}}</a></li>
+              <li class="list-group-item list-group-item-info">{{product.productCode | lowercase }}</li>
+              <li class="list-group-item list-group-item-warning">{{product.releaseDate}}</li>
+              <li class="list-group-item list-group-item-danger">{{product.price | currency:"INR":true}}</li>
+            </ul>
       </div>
     </div>

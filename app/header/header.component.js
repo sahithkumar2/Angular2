@@ -7,23 +7,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var BookComponent = /** @class */ (function () {
-    function BookComponent() {
+var headerComponent = /** @class */ (function () {
+    function headerComponent() {
     }
-    BookComponent = __decorate([
+    headerComponent = __decorate([
         core_1.Component({
-            selector: 'sahith-book',
-            template: "<h1></h1>"
+            selector: 'header-app',
+            templateUrl: 'app/header/header.component.html',
+            styleUrls: ['/app/header/header.component.css']
         })
-    ], BookComponent);
-    return BookComponent;
+    ], headerComponent);
+    return headerComponent;
 }());
-exports.BookComponent = BookComponent;
-// import {Component} from '@angular/core';
-// @Component ({
-//     selector : 'sahith-book',
-//     template : '<h1>Bag Components </h1>'
-// })
-// export class BagComponent{
-// } 
-//# sourceMappingURL=book.component.js.map
+exports.headerComponent = headerComponent;
+//# sourceMappingURL=header.component.js.map

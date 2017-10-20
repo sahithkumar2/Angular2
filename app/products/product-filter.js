@@ -7,23 +7,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var BookComponent = /** @class */ (function () {
-    function BookComponent() {
+var ProductFilterPipe = /** @class */ (function () {
+    function ProductFilterPipe() {
     }
-    BookComponent = __decorate([
-        core_1.Component({
-            selector: 'sahith-book',
-            template: "<h1></h1>"
+    ProductFilterPipe.prototype.transform = function (value, filterBy) {
+        filterBy = filterBy ? filterBy.toLocaleLowerCase() : null;
+        return filterBy ? value.filter(function (product) {
+            return product.productName.toLocaleLowerCase().indexOf(filterBy) !== -1;
+        }) : value;
+    };
+    ProductFilterPipe = __decorate([
+        core_1.Pipe({
+            name: 'productFilter'
         })
-    ], BookComponent);
-    return BookComponent;
+    ], ProductFilterPipe);
+    return ProductFilterPipe;
 }());
-exports.BookComponent = BookComponent;
-// import {Component} from '@angular/core';
-// @Component ({
-//     selector : 'sahith-book',
-//     template : '<h1>Bag Components </h1>'
-// })
-// export class BagComponent{
-// } 
-//# sourceMappingURL=book.component.js.map
+exports.ProductFilterPipe = ProductFilterPipe;
+//# sourceMappingURL=product-filter.js.map

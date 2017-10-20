@@ -7,14 +7,26 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var order_service_1 = require("./orders/order.service");
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
         this.name = "Using Angular2.0";
+        this.text1 = "Text1";
+        this.text2 = "text2";
+        // var arr=["abc","xyz","mno"];
+        // count:int= 0;
+        // setInterval(function(){
+        //     for(let i=0;i<3;i++){
+        // 	}
+        // 	name = arr[i]
+        // },1000);
     }
     AppComponent = __decorate([
         core_1.Component({
             selector: 'sahith-app',
-            template: "\n\t\t   <div>\n\t\t   <h1> {{name}} </h1>\n\t\t <sahith-book></sahith-book>\n\t\t <pm-product></pm-product>\n\t\n\t\t\n\t\t   </div>",
+            template: "\n\t\t   <div>\n\t\t   <nav class='navbar navbar-default'>\n\t\t\t   <div class='container-fluid'>\n\t\t\t\t   <a class='navbar-brand'>{{pageTitle}}</a>\n\t\t\t\t   <ul class='nav navbar-nav'>\n\t\t\t\t\t   <li><a [routerLink]=\"['/welcome']\">Home</a></li>\n\t\t\t\t\t   <li><a [routerLink]=\"['/products']\">Product List</a></li>\n\t\t\t\t\t   <li><a [routerLink]=\"['/orders']\">Orders List </a></li>\n\t\t\t\t   </ul>\n\t\t\t   </div>\n\t\t   </nav>\n\t\t   <div class='container'>\n\t\t\t   <router-outlet></router-outlet>\n\t\t   </div>\n\t\t</div>\n",
+            providers: [order_service_1.OrderService],
+            styleUrls: ['app/app.component.css']
         })
     ], AppComponent);
     return AppComponent;
